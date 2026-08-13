@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'robotoR';
+    src: url('../../../assets/fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'robotoM';
+    src: url('../../../assets/fonts/roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'robotoBo';
+    src: url('../../../assets/fonts/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'robotoL';
+    src: url('../../../assets/fonts/roboto/Roboto-Light.ttf');
+}
+
+body{
+    font-family: 'robotoR', sans-serif;
+    background-color: #e0e8ff;
+}
+
+
+
+.main{
+    width: 85%;
+    height: 97vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.logo{
+    width: 24rem;
+}
+
+
+
+
+.header{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+
+
+
+.leftSide{
+    width: 50%;
+    height: 70%;
+    background-color: #fff;
+    border-radius: .8em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.leftSide__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    font-family: 'robotoM', sans-serif;
+    padding-bottom: 1em;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 40%;
+}
+
+.label-input{
+    font-family: 'robotoM', sans-serif;
+    font-size: .8em;
+    position: absolute;
+    left: 3em;
+    top: 1.5em;
+}
+
+.input, .select-input, .dinamic-input{
+    width: 70%;
+    margin-top: 3.5em;
+    border-radius: .2em;
+    border: 1px solid #ddd;
+    padding: .4em 0;
+    position: relative;
+    background-color: #f2f5ff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-sizing: content-box;
+    padding-left: .5em;
+}
+
+
+
+.select-input{
+    margin-top: 0em;
+}
+
+.text-inputs{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.forgot__password{
+    position: absolute;
+    right: 10%;
+    bottom: 40%;
+    font-size: .8em;
+    color: #0d1e50;
+    text-decoration: none;
+    font-family: 'robotoM', sans-serif;
+}
+
+
+.goback-container{
+    position: absolute;
+    left: 3em;
+    bottom: 7em;
+    cursor: pointer;
+}
+
+.goback{
+    font-family: 'robotoM', sans-serif;
+    background: none;
+    border: none;
+    font-size: .85em;
+    cursor: pointer;
+}
+
+.continue-container{
+    bottom: -4em;
+    right: 3em;
+    position: absolute;
+    cursor: pointer;
+}
+
+.submit-container{
+    bottom: 7em;
+    right: 3em;
+    position: absolute;
+}
+
+.error-box{
+    font-size: .8em;
+    color: #330909;
+    position: absolute;
+    left: 3.5em;
+    bottom: -1.4em; 
+}
+
+.error-r2, .error-r1{
+    top: 6em;
+    left: 3em;
+}
+
+.continue, .submit{
+    padding: .5em 2.5em;
+    color: #fff;
+    border-radius: .2em;
+    margin-top: 2em;
+    font-weight: bold;
+    border: none;
+    font-size: .85em;
+    background-color: #0d1e50;
+    text-decoration: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+
+}
+
+
+.continue:hover, .submit:hover{
+    background-color: #162c6d;
+}
+
+
+.enter-data{
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    position: relative;
+    height: 70%;
+    width: 100%;
+    padding-bottom: 7em;
+}
+
+
+.select-inputs{
+    display: none;
+    flex-direction: column;
+    height: 80%;
+}
+
+
+
+
+
+
+
+

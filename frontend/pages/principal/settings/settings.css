@@ -1,0 +1,650 @@
+
+
+body {
+    font-family: 'robotoR', sans-serif;
+    background-color: #e1e9ff;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.sidebar {
+    width: 9.5rem;
+    height: 80vh;
+    background-color: #fdfdfd;
+    border-radius: .5rem;
+    margin: 1em;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.8;
+    position: fixed;
+}
+
+.sidebar-logo {
+    display: flex;
+    padding: .2em 0em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.logo-img {
+    width: 70px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-description {
+    font-family: 'robotoBo', sans-serif;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    color: #0a198b;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    padding-left: .1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: .4rem;
+}
+
+.link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.75em .7em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 98%;
+    height: 2.5rem;
+    border-radius: .2rem;
+    box-sizing: border-box;
+}
+
+.link:hover {
+    background-color: #e0e6f3;
+}
+
+.err-box{
+    text-align: left;
+    line-height: normal;
+}
+
+.enter-data{
+    width: 100%;
+    display: flex;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.select-input{
+    width: 80%;
+    margin-top: 3em;
+    border-radius: .32rem;
+    border: none;
+    padding: .55em .5rem;
+    font-family: roboto;
+    font-weight: 400;
+    border: 1PX SOLID #bbb;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, .2) 4px 5px 2px;
+    box-sizing: content-box;
+}
+
+.label-select{
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: .8em;
+    position: absolute;
+    left: 1.5em;
+    top: 1em;
+}
+
+.input-container{
+    width: 100%;
+}
+
+.link p {
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.err-box__gerencia{
+    left: 2.5rem !important;
+}
+
+.input-container__smaller{
+    width: 60%;
+}
+.icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+}
+
+.logout-link {
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0.75em 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 95%;
+    background: none;
+    height: 2.5rem;
+    border-radius: .2rem;
+    box-sizing: border-box;
+    margin-top: auto;
+    text-decoration: none;
+    margin-left: .2em;
+}
+
+
+.logout-link .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.logout-link p {
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.logout-link:hover {
+    background-color: #ffe0e0;
+}
+
+.bold {
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+}
+
+.main {
+    width: 70%;
+    margin-left: 16em;
+    margin-bottom: 2rem;
+}
+
+
+
+.header{
+    width: 20%;
+    height: 2.3rem;
+    background-color: #fdfdfd;
+    margin-top: 1.5em;
+    border-radius: .4rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    opacity: 0.9;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 3rem;
+    opacity: 0.8;
+    justify-content: center;
+}
+
+.nav-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    position: relative;
+    user-select: none;
+    transition: 1s ease-in-out;
+}
+
+.flex{
+    transition: 1s ease-in-out;
+}
+
+.nav-item p{
+    color: #222;
+    font-family: Roboto;
+    font-size: .85rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem;
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.nav-item svg{
+    padding-left: .4rem;
+}
+
+
+.nav-dropdowns{
+    display: flex;
+}
+
+.dropdown-item{
+    position: absolute;
+    top: 3rem;
+    user-select: none;
+    background-color: #fdfdfd;
+    border-radius: .5rem;
+    width: 6.5rem;
+    height: 24rem;   
+}
+
+
+/* Ensure the parent .nav-item has position: relative; if .dropdown-item is absolute */
+.nav-item {
+    position: relative; /* This is crucial for dropdown-item's absolute positioning */
+    /* Add your existing .nav-item styles here */
+    display: flex; /* Assuming nav-items are flex to align content */
+    justify-content: center; /* If you need the text inside nav-item to be centered */
+    align-items: center;
+    /* You likely have a specific width/padding for .nav-item from your navigation bar */
+    /* For example: padding: 0 15px; or width: Xpx; */
+}
+
+.dropdown-item {
+    /* Keep all your existing size, padding, border, etc., for the dropdown-item here. */
+    width: 10em; /* Your existing width */
+    height: 12em; /* Your existing height */
+    border-radius: .4rem;
+    background-color: #fff; /* Your existing background */
+
+    position: absolute; /* Essential for positioning relative to .nav-item */
+    top: 3rem; /* Your existing top positioning (adjust if needed for vertical spacing) */
+
+    /* --- NEW CENTERING RULES --- */
+    left: 50%; /* Position the left edge at the horizontal center of the parent */
+    transform: translateX(-50%) translateY(-70%); /* Move back by half its own width, then apply existing Y transform */
+    /* --- END NEW CENTERING RULES --- */
+
+    z-index: 10;
+    display: flex; /* Or whatever display property your content requires */
+    flex-direction: column;
+    /* Add any other specific size or layout properties from your original design */
+
+    /* --- Transition Properties --- */
+    opacity: 0; /* Start invisible */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Animate both properties */
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.dropdown-item.show {
+    transform: translateX(-50%) translateY(0); /* Move to its natural position, keeping horizontal center */
+    opacity: 1; /* Become fully visible */
+    pointer-events: auto; /* Enable interaction when visible */
+}
+.incorporar{
+    right: .6rem;
+}
+
+.movilizar{
+    right: 0rem;
+}
+
+.hidden{
+    opacity: 0;
+        transform: translateY(-10px); /* Opcional: para un efecto de deslizamiento desde arriba */
+
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+
+.page-num-btn.active {
+    color: #0056b3;           /* Texto en color blanco para que resalte */
+    font-weight: bold;        /* El número se verá en negrita */
+    border-color: #0056b3;    /* Un borde ligeramente más oscuro */
+    cursor: default;          /* El cursor no cambia a 'mano' porque ya estás en esa página */
+}
+
+.options-item:hover{
+    background-color: #e0e6f3;
+    transition: background-color 0.2s ease;
+
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 98%;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.options-item{
+    border: none;
+    background: none;
+    height: 3rem;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    color: #222;
+    width: 99%;
+    height: 2.8rem;
+    padding-left: .9rem;
+    font-size: .9rem;
+    border-radius: .2rem;
+    text-decoration: none;
+    margin-top: .25rem;
+    cursor: pointer;
+}
+
+
+.options-item svg{
+    width: 14px;
+    flex-shrink: 0;
+    margin-right: .6rem;
+}
+
+.options-item p{
+}
+
+.options-item{
+    border: none;
+    background: none;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9rem;
+    margin-top: 1.5rem;
+}
+
+.card-title{
+    font-family: Roboto;
+    font-size: .875rem;
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.card-data{
+    font-family: Roboto;
+    font-size: 1.475rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.035rem;
+}
+
+.table-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    margin-top: 3rem;
+}
+
+
+
+.searchbar-form{
+    height: 2em;
+    width: 100%;
+    position: relative;
+}
+
+.properties__searchbar__settings{
+    background-color: #ffffff90;
+    border: none;
+    width: 100%;
+    height: 2rem;
+    border-radius: .2rem;
+    position: relative;
+    padding-left: .8rem;
+    box-sizing: border-box;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+}
+
+.searchbar-icon{
+    position: absolute;
+    right: .5em;
+    top: .35rem;
+    width: 20px;
+    height: 20px;
+}
+
+.header-rightside{
+    width: 40%;
+    padding-left: .6rem;
+}
+
+.table-header__title{
+    font-family: Roboto;
+    letter-spacing: .1rem;
+    font-size: 1.1rem;
+    width: 100%;
+    font-weight: 500;
+    margin: auto;
+    margin-top: .7rem;
+}
+
+.header-leftside{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.table-title{
+    color: #222;
+    font-family: Roboto;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.875rem; /* 136.364% */
+    letter-spacing: 0.06875rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    padding-left: 2rem;
+}
+
+.button{
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+}
+
+.button-edit, .button-delete{
+    width: 6rem;
+    height: 1.8rem;
+    border: none;
+    color: #ddd;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+    line-height: 0;
+    background-color: #0d1e50;
+    border-radius: .25rem;
+}
+
+.button-imprimir{
+    background-color: #202020;
+    border-radius: .25rem;
+    opacity: 0.9;
+    color: #ddd;
+}
+
+.button-mostrar{
+    background-color: #BAC3FF;
+    border-radius: .25rem;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.table-settings__container{
+    display: flex;
+    background-color: #ffffff90;
+    border-radius: .4rem;
+    margin-top: .4rem;
+    font-family: Roboto;
+    width: 100%;
+    height: 13rem;
+    margin: .8rem auto;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    font-size: 0.875rem;
+}
+
+
+.table-properties{
+    border-collapse: collapse;
+    text-align: center;
+    height: auto;
+    font-family: Roboto;
+}
+
+.table-properties th{
+    border-bottom: 1px solid #ddd;
+    padding: .8rem;
+}
+
+td,th{
+        font-family: Roboto;
+}
+
+td{
+    font-weight: 400;
+}
+
+th{
+    font-weight: 500;
+}
+
+
+table{
+    width: 100%;
+    overflow-x: scroll;
+    font-size: .75rem;
+    white-space: no-wrap;
+}
+
+tr{
+    border-bottom: 1px solid #ddd;
+}
+
+th,td{
+    white-space: nowrap;
+}
+
+.table-properties td{
+    padding: 0 .2rem;
+    line-height: 1.2;
+    height: .8rem;
+}
+
+.table-properties tr, td{
+    margin: 0;
+}
+
+.table-properties thead th:nth-child(1),
+.table-properties tbody td:nth-child(1) {
+  width: 10%; /* Para la columna "Id" */
+}
+
+.table-properties thead th:nth-child(2),
+.table-properties tbody td:nth-child(2) {
+  width: 45%; /* Para la columna "Sede" */
+}
+
+.table-properties thead th:nth-child(3),
+.table-properties tbody td:nth-child(3) {
+  width: 45%; /* Para la columna "Municipio" */
+}
+
+
+.page-num-btn{
+    width: 28px;
+    height: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Roboto;
+}
+
+
+.page-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+.page-btn svg{
+    width: 18px;
+    height: 18px;
+}
+
+.page-btn{
+    cursor: pointer;
+}
+
+
+table{
+    border-spacing: 2px;
+}
+
+
+.pagination-controls{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 10%;
+}
+
+.modal-actions{
+    margin-top: 2rem;
+}

@@ -1,0 +1,284 @@
+.head-input__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.err-box{
+    font-size: .8em;
+    color: #330909;
+    position: absolute;
+    left: 1rem;
+    top: 4.5rem;
+}
+
+.err-employee{
+    position: absolute;
+    left: 0;
+    top: 4rem;
+}
+
+
+
+.employee-selection-container{
+    width: 100%;
+
+}
+
+.employee-input__container{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.employee-search-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.btn-search-employee{
+    width: 7rem;
+    height: 2rem;
+    border-radius: .25rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+    background-color: #BAC3FF;
+}
+
+.input-employee{
+    margin: 0;
+    width: 100%;
+}
+
+.search-container{
+    width: 60%;
+}
+
+.employee-label{
+    top: -1.6rem;
+    left: 0;
+}
+
+
+.search-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-employee__input{
+    width: 45%;
+}
+
+.select-employee{
+    width: 30%;
+}
+
+.employee-results__container{
+    overflow-x: scroll;
+    width: 100%;
+    background-color: #bac3ff5a;
+    padding: .5rem;
+    margin-top: .8rem;
+    border-radius: .35rem;
+}
+
+table{
+    width: 100%;
+    overflow-x: scroll;
+    font-size: .75rem;
+    white-space: no-wrap;
+}
+
+tr{
+    border-bottom: 1px solid #ddd;
+}
+
+th,td{
+    white-space: nowrap;
+    padding: 4px;
+}
+
+
+.select-employee-btn{
+    width: 7em;
+    height: .2em;
+    padding: 0rem .15rem;
+    border-radius: .15rem;
+    border: none;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 2rem;
+    background-color: #87a1fd;
+    color: #222;
+    font-family: Roboto;
+    font-size: .7rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pagination-controls{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 10%;
+}
+
+.page-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+.asset-page-numbers{
+    background: none;
+    border: none;
+    height: 15px;
+    font-family: Roboto;
+    cursor: pointer;
+}
+.page-numbers{
+    margin-top: -2.4rem;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.page-num-btn{
+    width: 28px;
+    height: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Roboto;
+}
+
+.page-btn svg{
+    width: 18px;
+    height: 18px;
+}
+
+.page-btn{
+    cursor: pointer;
+}
+
+.active{
+    color: blue;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+
+/* --- NEW Asset Search Styles (adapted from employee) --- */
+
+.caseexisting-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-selection-container {
+    width: 100%;
+}
+
+.asset-input__container {
+    display: flex;
+    height: 20%; /* Consider if this fixed height is suitable for all content */
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.asset-search-section {
+    width: 100%;
+    display: none;
+    /* Visibility (display: none/block) will be controlled by JavaScript,
+       e.g., using the 'show'/'hidden' classes as previously discussed. */
+    flex-direction: column;
+}
+
+.btn-search-asset { /* Button to toggle the asset search section */
+    width: 7rem;
+    height: 2rem;
+    border-radius: .25rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.02rem;
+    background-color: #BAC3FF;
+}
+
+.input-asset { /* For the asset search input field (e.g., #asset-search-input) */
+    margin: 0;
+    width: 100%;
+}
+
+.asset-label{
+    top: -1.5rem;
+    left: 0;
+}
+
+.asset-search-controls { /* Container for asset search input and filter */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-asset__input { /* Specific width for the search input within controls */
+    width: 45%;
+}
+
+.select-asset { /* Specific width for the filter select (e.g., #asset-estatus-filter) */
+    width: 30%;
+}
+
+.asset-results__container { /* Container for the asset search results table */
+    overflow-x: scroll;
+    width: 100%;
+    background-color: #bac3ff5a;
+    padding: .5rem;
+    margin-top: .8rem;
+    border-radius: .35rem;
+}
+
+.select-asset-btn { /* Style for the 'Seleccionar' button within the asset table */
+    padding: .2rem .3rem;
+    border-radius: .15rem;
+    border: none;
+    background-color: #87a1fd;
+    color: #222;
+    font-family: Roboto;
+    font-size: .7rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.err-asset{
+    left: 0;
+}
+
+/* Pagination controls for assets */
+/* Assuming pagination elements (e.g., #prev-asset-page-btn, #next-asset-page-btn,
+   #asset-page-info, #asset-page-numbers) will inherit general pagination styles
+   like .pagination-controls, .page-btn, .page-

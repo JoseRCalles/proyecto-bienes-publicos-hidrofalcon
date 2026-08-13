@@ -1,0 +1,170 @@
+@import url('../shared/css/modal.css');
+@import url('../shared/css/search-employee-and-propertie.css');
+
+
+.extra-actions{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding-left: 1.5rem;
+    height: 20%;
+    justify-content: space-between;
+    bottom: -5rem;
+    padding-top: 1rem;
+}
+
+.extrae-actions{
+    position: absolute;
+    width: 90%;
+    top: 6rem;
+    right: -8.4rem;
+}
+
+#extra-actions__incorporation{
+    height: 2.7rem;
+}
+
+.casenew-container{
+    width: 100%;
+    display: none;
+}
+
+.caseexisting-container{
+    display: none;
+}
+
+.scnpart{
+    padding-bottom: 2rem;
+}
+
+.button{
+    border-radius: .25rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+    color: #ddd;
+    background-color: #0d1e50;
+    cursor: pointer;
+    margin-top: .3rem;
+}
+
+.next-button{
+    position: absolute;
+    top: -1rem;
+    left: -7rem;
+}
+.submit-button{
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    text-align: center;
+}
+
+.submit-button__incorporation{
+    display: none;
+    position: absolute;
+    top: -2rem;
+    right: 1.5rem;
+}
+
+
+
+
+.frstpart-container{
+    position: relative;
+    width: 100%;
+    display: none;
+}
+
+.scndpart-container{
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+.show{
+    display: flex;
+}
+
+.goback-button{
+    background-color: #ddd;
+    color: #222;
+}
+
+
+.switch-container {
+    display: flex; /* Arranges children horizontally */
+    width: 30%; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Important to keep the indicator inside */
+    position: relative; /* Crucial for absolute positioning of the indicator */
+    cursor: pointer; /* Indicates it's clickable */
+    background-color: #f0f0f0; /* Default background */
+    font-size: .8rem;
+    font-family: Roboto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.switch-option {
+    flex: 1; /* Each option takes equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: #222; /* Default text color */
+    z-index: 1; /* Ensures text is above the indicator */
+    transition: color 0.3s ease; /* Smooth text color change */
+}
+
+.switch-indicator {
+    position: absolute; /* Allows precise positioning */
+    top: 0;
+    left: 0;
+    width: 50%; /* Starts covering one option (50% of 200px width) */
+    height: 100%;
+    background-color: #0d1e50; /* Color of the active switch part */
+    border-radius: 20px; /* Matches container border-radius */
+    transition: left 0.3s ease, background-color 0.3s ease; /* Smooth movement and color change */
+    z-index: 0; /* Stays behind the text */
+}
+
+/* Styles for when an option is active */
+.switch-option.active {
+    color: #fff; /* White text for the active option */
+}
+
+.hidden{
+    display: none;
+}
+
+#submit-button__incorporation{
+    top: 0;
+    right: -1rem;
+}
+
+#incorporation-modal__container{
+    overflow-y: auto;
+}
+
+
+#err-employee_incorporation{
+    top: 2.2rem;
+}
+
+#existing-submit{
+    top: -1rem;
+    right: 1.4rem;
+    
+}
+
+.err-asset{
+    top: 2.3rem;
+}

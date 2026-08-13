@@ -1,0 +1,26 @@
+.submit-button__movilization{
+    position: absolute;
+    top: 13rem;
+    right: 1.5rem;
+}
+
+.enter-data__movilization{
+    padding-bottom: 2rem;
+}
+
+.movilization-button{
+    right: 7.9rem;
+    top: -6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-control{
+    position: relative;
+    z-index: 50;
+}
+
+.extra-actions{
+    z-index: 40;
+    height: 2rem;
+}

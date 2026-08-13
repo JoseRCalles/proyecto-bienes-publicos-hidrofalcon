@@ -1,0 +1,13 @@
+body{
+    box-sizing: border-box;
+}
+
+#desincorporar-submit{
+    right: 1.6em;
+    top: -2.5rem;
+}
+
+#asset-page-numbers__desincorporation{
+    margin-top: 0;
+}
+

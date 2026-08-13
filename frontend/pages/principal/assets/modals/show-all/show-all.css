@@ -1,0 +1,144 @@
+.search-controls{
+    display: flex;
+    width: 100%;
+}
+.properties__searchbar{
+    background-color: #ffffff90;
+    border: none;
+    width: 12.25rem;
+    height: 2rem;
+    border-radius: .2rem;
+    position: relative;
+    padding-left: .8rem;
+    box-sizing: border-box;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem;
+    letter-spacing: 0.02rem;
+}
+
+.searchbar-icon{
+    position: absolute;
+    right: .5em;
+    top: .35rem;
+    width: 20px;
+    height: 20px;
+}
+
+.filter-selectors{
+    display: flex;
+    width: 60%;
+}
+
+#showall-modal{
+    width: 100000000%;
+}
+
+.allAssets-results{
+    background-color: #e1e9ff;
+    overflow-x: scroll;
+    border-radius: .2rem;
+    margin-top: .8rem;
+    padding: .4rem;
+}
+
+.allAssets-results table{
+    overflow: scroll;
+}
+
+
+
+#modal__content-showAll{
+    overflow-x: scroll;
+}
+
+.allAssets-searchbar-form{
+    width: 100%;
+}
+
+.searchpart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.searchbar__controls{
+    position: relative;
+}
+
+.searchbar__showAll{
+    background-color: #e1e9ff;
+    border: none;
+    box-shadow: none;
+    border-radius: .2rem;
+}
+
+.searchpart{
+    margin-top: 2rem;
+}
+
+.filter-container{
+    display: flex;
+}
+
+.filter-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #222;
+}
+
+
+.filter-button svg{
+    width: 14px;
+    padding-left: .6rem;
+}
+
+.filter-button svg path{
+    fill: #fff;
+}
+
+
+
+.input__showAll{
+    margin-top: 0px;
+    width: 75%;
+    position: relative;
+}
+
+.label__showAll{
+    left: 10px;
+    top: -24px;
+}
+
+.filter-selectors{
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+}
+
+.filter-selectors.show{
+    opacity: 1;
+    max-height: 1000px;
+    display: flex;
+}
+
+.filter-selectors.hidden{
+    display: none;
+    pointer-events: none;
+    height: 0;
+}
+
+.button-exportar-excel{
+    background-color: #1d6f42;
+}

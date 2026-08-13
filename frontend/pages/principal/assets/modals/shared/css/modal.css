@@ -1,0 +1,339 @@
+/* --- Estilos Base de Elementos (Mantener tus estilos existentes) --- */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.btn {
+    padding: 16px 32px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.btn:hover {
+    background-color: #357bd8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(74, 144, 226, 0.4);
+}
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
+
+/* --- Estilos de MicroModal --- */
+
+/* El modal en sí, que inicialmente está oculto */
+/* Eliminamos display: none !important; y display: block !important; */
+/* Usaremos visibility y opacity para las transiciones */
+.modal {
+    outline: none;
+    /* Por defecto, el modal está invisible y no interactuable */
+    visibility: hidden;
+    opacity: 0;
+    /* La transición será para la visibilidad y la opacidad */
+    /* Cuando se usa visibility, el delay ayuda a que la transición de opacidad se complete antes de ocultar */
+    transition: visibility 0s linear 0.3s, opacity 0.3s ease;
+    /* Aseguramos que no ocupe espacio cuando está oculto, si es necesario */
+    position: fixed; /* Ojo si el MicroModal lo gestiona de otra forma */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    display: flex; /* Mantenemos display flex para centrar el modal__overlay */
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* No se puede interactuar cuando está oculto */
+}
+
+.modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    /* Cuando se abre, la transición de visibility no tiene delay */
+    transition: visibility 0s linear 0s, opacity 0.3s ease;
+    pointer-events: auto; /* Se puede interactuar cuando está abierto */
+}
+
+
+/* Overlay (el fondo oscuro detrás del modal) */
+.modal__overlay {
+    display: flex; /* MicroModal lo establece, pero lo reforzamos */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 40, 50, 0.78);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición solo para la opacidad */
+    z-index: 999; /* Z-index menor que el modal, pero mayor que el resto del contenido */
+    visibility: hidden; /* Oculto por defecto */
+    pointer-events: none; /* No interactuable cuando está oculto */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
+.modal__overlay::-webkit-scrollbar {
+    display: none;
+}
+
+/* El overlay se hace visible cuando el *modal* tiene la clase is-open */
+.modal.is-open .modal__overlay {
+    opacity: 1;
+    visibility: visible; /* Visible cuando el modal está abierto */
+    pointer-events: auto; /* Interactuable cuando está visible */
+}
+
+/* El contenedor principal del contenido del modal */
+.modal__container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: .8rem;
+    max-width: 550px;
+    width: 90%;
+    margin: 20px;
+    /* Estas son tus transiciones de escala y opacidad, ¡perfectas! */
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease-out;
+    position: relative;
+    z-index: 1001; /* Asegura que el contenido del modal esté por encima del overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    /* Para que el modal no se desborde al hacer scroll en el overlay */
+    max-height: calc(100vh - 40px); /* Ajusta según tus márgenes */
+}
+
+
+
+.modal.is-open .modal__container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Header del modal - Mantener */
+.modal__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Título del modal - Mantener */
+.modal__title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    padding-right: 50px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+/* Contenido de texto del modal - Mantener */
+.modal__content {
+    width: 100%;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin-bottom: 35px;
+    padding: 0 25px;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contenedor de botones del modal - Mantener */
+.modal__footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 15px;
+}
+
+/* Estilos base para los botones del modal - Mantener */
+.modal__btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    color: white;
+    min-width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Estilo para el botón primario - Mantener */
+.modal__btn-primary {
+    background-color: #2ecc71;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+.modal__btn-primary:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+.modal__btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(46, 204, 113, 0.25);
+}
+
+/* Estilo para el botón secundario (cancelar/cerrar) - Mantener */
+.modal__btn-secondary {
+    background-color: #95a5a6;
+    box-shadow: 0 5px 15px rgba(149, 165, 166, 0.3);
+}
+.modal__btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(149, 165, 166, 0.4);
+}
+.modal__btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(149, 165, 166, 0.25);
+}
+
+/* Botón de cerrar 'x' en la esquina superior derecha del modal - Mantener */
+.modal__close {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    font-size: 1.3em;
+    color: #aaa;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.0);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+.modal__close:hover {
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.06);
+    transform: rotate(90deg) scale(1.05);
+}
+
+/* --- Input y Botones generales (Mantener tus estilos existentes) --- */
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 1em;
+}
+
+.label-input{
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: .8em;
+    position: absolute;
+    left: 1.5em;
+    top: 1em;
+}
+
+.input{
+    width: 80%;
+    margin-top: 3em;
+    border-radius: .32rem;
+    border: none;
+    padding: .55em .5rem;
+    font-family: roboto;
+    font-weight: 400;
+    border: 1PX SOLID #bbb;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, .2) 4px 5px 2px;
+    box-sizing: content-box;
+}
+
+.text-inputs{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.button-container{
+    position: absolute;
+    right: 1rem;
+    bottom: -3rem;
+    z-index: 2;
+}
+
+.submit-container input{
+    cursor: pointer;
+}
+
+.button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: .25rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+    color: #ddd;
+    background-color: #0d1e50;
+    cursor: pointer;
+}
+
+.submit-container input:hover{
+    cursor: pointer;
+    background-color: #162c6d;
+}
+
+.enter-data{
+    position: relative;
+    height: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+.enter-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: .8rem;
+    flex-direction: column;
+}
+
+.abreviation{
+    font-size: 1.2rem;
+}

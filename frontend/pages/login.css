@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'robotoR';
+    src: url('../assets/fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'robotoM';
+    src: url('../assets/fonts/roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'robotoBo';
+    src: url('../assets/fonts/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'robotoL';
+    src: url('../assets/fonts/roboto/Roboto-Light.ttf');
+}
+
+body{
+    font-family: 'robotoR', sans-serif;
+    background-color: #e0e8ff;
+}
+
+
+.main{
+    width: 85%;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.logo{
+    width: 24rem;
+}
+
+
+
+.leftSide{
+    width: 30%;
+    height: 70%;
+    background-color: #ffffff;
+    backdrop-filter: blur(1000000px);
+    border-radius: .4em;
+    position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.leftSide__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    font-family: 'robotoM', sans-serif;
+    padding-bottom: 1em;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 1em;
+}
+
+.label-input{
+    font-family: 'robotoM', sans-serif;
+    font-size: .9em;
+    position: absolute;
+    left: 3em;
+    top: 1em;
+}
+
+.input{
+    width: 80%;
+    margin-top: 3em;
+    border-radius: .32rem;
+    border: none;
+    padding: .55em 0;
+    border: 1PX SOLID #bbb;
+    font-family: Roboto;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, .2) 4px 5px 2px;
+    box-sizing: content-box;
+    padding-left: .5em;
+}
+
+.err-box{
+    font-size: .8em;
+    color: #330909;
+    position: absolute;
+    left: 3em;
+    bottom: -1.5em; 
+}
+
+.text-inputs{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.forgot__password{
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    font-size: .8em;
+    color: #0d1e50;
+    text-decoration: none;
+    font-family: 'robotoM', sans-serif;
+}
+
+.forgot__password:hover{
+    color: #1c3b99;
+}
+
+
+.submit-container{
+    width: 90%;
+    height: 85%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.submit-container input{
+    cursor: pointer;
+}
+
+.submit{
+    padding: .5em 2.5em;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    border-radius: .25rem;
+    margin-top: 2em;
+    border: none;
+    font-size: .85em;
+    background-color: #7a92d8;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.submit-container input:hover{
+    cursor: pointer;
+        background-color: #162c6d;
+}
+
+
+.enter-data{
+    position: relative;
+    height: 30%;
+    padding-bottom: 7em;
+    border-bottom: 1px solid #ddd;
+}
+
+.extra-actions{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1.5em;
+}
+
+
+.register-button{
+    text-decoration: none;
+    padding: .5em 3em;
+    border-radius: .25rem;
+    font-size: .85em;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    cursor: pointer;
+    color: #fff;
+    letter-spacing: .5px;
+    font-family: 'roboto', sans-serif;
+}
+
+.register-button:hover{
+        background-color: #8fa4e5;
+}
+

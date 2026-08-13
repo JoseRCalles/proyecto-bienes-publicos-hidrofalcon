@@ -1,0 +1,500 @@
+
+
+body {
+    font-family: 'robotoR', sans-serif;
+    background-color: #e1e9ff;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.sidebar {
+    width: 9.5rem;
+    height: 80vh;
+    background-color: #fdfdfd;
+    border-radius: .5rem;
+    margin: 1em;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.8;
+}
+
+.sidebar-logo {
+    display: flex;
+    padding: .2em 0em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.logo-img {
+    width: 70px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-description {
+    font-family: 'robotoBo', sans-serif;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    color: #0a198b;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    padding-left: .1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: .4rem;
+}
+
+.link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.75em .7em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 98%;
+    height: 2.5rem;
+    border-radius: .2rem;
+    box-sizing: border-box;
+}
+
+.link:hover {
+    background-color: #e0e6f3;
+}
+
+.link p {
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+}
+
+.logout-link {
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0.75em 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 95%;
+    background: none;
+    height: 2.5rem;
+    border-radius: .2rem;
+    box-sizing: border-box;
+    margin-top: auto;
+    text-decoration: none;
+    margin-left: .2em;
+}
+
+
+.logout-link .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.logout-link p {
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.logout-link:hover {
+    background-color: #ffe0e0;
+}
+
+.bold {
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+}
+
+.main {
+    width: 70%;
+    margin-left: 8em;
+}
+
+
+
+.header{
+    width: 68%;
+    height: 2.3rem;
+    background-color: #fdfdfd;
+    margin-top: 1.5em;
+    border-radius: .4rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    opacity: 0.9;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 3rem;
+    padding-left: 5rem;
+    opacity: 0.8;
+}
+
+.nav-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    position: relative;
+    user-select: none;
+    transition: 1s ease-in-out;
+}
+
+.flex{
+    transition: 1s ease-in-out;
+}
+
+.active{
+    color: blue;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+
+.nav-item p{
+    color: #222;
+    font-family: Roboto;
+    font-size: .85rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem;
+    letter-spacing: 0.02rem;
+    margin-left: .8em;
+}
+
+.nav-item svg{
+    padding-left: .4rem;
+}
+
+
+.nav-dropdowns{
+    display: flex;
+}
+
+.dropdown-item{
+    position: absolute;
+    top: 3rem;
+    user-select: none;
+    background-color: #fdfdfd;
+    border-radius: .5rem;
+    width: 6.5rem;
+    height: 8rem;   
+}
+
+
+/* Ensure the parent .nav-item has position: relative; if .dropdown-item is absolute */
+.nav-item {
+    position: relative; /* This is crucial for dropdown-item's absolute positioning */
+    /* Add your existing .nav-item styles here */
+    display: flex; /* Assuming nav-items are flex to align content */
+    justify-content: center; /* If you need the text inside nav-item to be centered */
+    align-items: center;
+    /* You likely have a specific width/padding for .nav-item from your navigation bar */
+    /* For example: padding: 0 15px; or width: Xpx; */
+}
+
+.dropdown-item {
+    /* Keep all your existing size, padding, border, etc., for the dropdown-item here. */
+    width: 6.5em; /* Your existing width */
+    height: 8em; /* Your existing height */
+    border-radius: .4rem;
+    background-color: #fff; /* Your existing background */
+
+    position: absolute; /* Essential for positioning relative to .nav-item */
+    top: 3rem; /* Your existing top positioning (adjust if needed for vertical spacing) */
+
+    /* --- NEW CENTERING RULES --- */
+    left: 50%; /* Position the left edge at the horizontal center of the parent */
+    transform: translateX(-50%) translateY(-70%); /* Move back by half its own width, then apply existing Y transform */
+    /* --- END NEW CENTERING RULES --- */
+
+    z-index: 10;
+    display: flex; /* Or whatever display property your content requires */
+    flex-direction: column;
+    /* Add any other specific size or layout properties from your original design */
+
+    /* --- Transition Properties --- */
+    opacity: 0; /* Start invisible */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Animate both properties */
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.dropdown-item.show {
+    transform: translateX(-50%) translateY(0); /* Move to its natural position, keeping horizontal center */
+    opacity: 1; /* Become fully visible */
+    pointer-events: auto; /* Enable interaction when visible */
+}
+.incorporar{
+    right: .6rem;
+}
+
+.movilizar{
+    right: 0rem;
+}
+
+.hidden{
+    opacity: 0;
+        transform: translateY(-10px); /* Opcional: para un efecto de deslizamiento desde arriba */
+
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.options-item:hover{
+    background-color: #e0e6f3;
+    transition: background-color 0.2s ease;
+
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 98%;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.options-item{
+    border: none;
+    background: none;
+    height: 3rem;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    color: #222;
+    width: 99%;
+    height: 2.8rem;
+    padding-left: .9rem;
+    font-size: .9rem;
+    border-radius: .2rem;
+    text-decoration: none;
+    margin-top: .25rem;
+    cursor: pointer;
+}
+
+
+.options-item svg{
+    width: 14px;
+    flex-shrink: 0;
+    margin-right: .6rem;
+}
+
+.options-item p{
+}
+
+.options-item{
+    border: none;
+    background: none;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9rem;
+    margin-top: 1.5rem;
+}
+
+.card-title{
+    font-family: Roboto;
+    font-size: .875rem;
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.card-data{
+    font-family: Roboto;
+    font-size: 1.475rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.035rem;
+}
+
+.table-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    margin-top: 3em;
+}
+
+.searchbar-form{
+    height: 2em;
+    position: relative;
+}
+
+.properties__searchbar{
+    background-color: #ffffff90;
+    border: none;
+    width: 26.25rem;
+    height: 2rem;
+    border-radius: .2rem;
+    position: relative;
+    padding-left: .8rem;
+    box-sizing: border-box;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 275% */
+    letter-spacing: 0.02rem;
+}
+
+.searchbar-icon{
+    position: absolute;
+    right: .5em;
+    top: .35rem;
+    width: 20px;
+    height: 20px;
+}
+
+.header-leftside{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 30%;
+}
+
+.table-title{
+    color: #222;
+    font-family: Roboto;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.875rem; /* 136.364% */
+    letter-spacing: 0.06875rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+}
+
+.button{
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    color: #222;
+    font-family: Roboto;
+    font-size: .8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 275% */
+    letter-spacing: 0.02rem;
+}
+
+.button-imprimir{
+    background-color: #202020;
+    border-radius: .25rem;
+    opacity: 0.9;
+    color: #ddd;
+}
+
+.button-mostrar{
+    background-color: #BAC3FF;
+    border-radius: .25rem;
+    opacity: 0.9;
+}
+
+.table-properties__container{
+    display: flex;
+    background-color: #ffffff90;
+    border-radius: .4rem;
+    margin-top: .9rem;
+    font-family: Roboto;
+    width: 100%;
+    height: 26rem;
+    margin: .8rem auto;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    font-size: 0.875rem;
+}
+
+
+.table-properties{
+    border-collapse: collapse;
+    text-align: center;
+    height: auto;
+    font-family: Roboto;
+}
+
+.table-properties th{
+    border-bottom: 1px solid #ddd;
+    padding: .8rem;
+}
+
+td,th{
+        font-family: Roboto;
+}
+
+td{
+    font-weight: 400;
+}
+
+th{
+    font-weight: 500;
+}
+
+.table-properties td{
+    padding: 0 .2rem;
+    line-height: 1.2;
+    height: .8rem;
+}
+
+.table-properties tr, td{
+    margin: 0;
+}
+
+.page-num-btn{
+    width: 28px;
+    height: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Roboto;
+}
+
+#modal__content-incorporation-morethan{
+    overflow: scroll;
+}

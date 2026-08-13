@@ -1,0 +1,39 @@
+Options -Indexes
+RewriteEngine On
+rewriteBase /systemaHidrofalcon/
+# ---------------------------------------------------------------
+# URLs AMIGABLES FRONTEND
+# ---------------------------------------------------------------
+RewriteRule ^inicio$ index.php [L]
+RewriteRule ^login$ frontend/pages/login.php [L]
+RewriteRule ^principal$ frontend/pages/principal/landing/landing.php [L]
+RewriteRule ^notificaciones$ frontend/pages/notifications/index.php [L]
+RewriteRule ^funcionalidades$ frontend/pages/functionalities/index.php [L]
+RewriteRule ^registro$ frontend/pages/user-options/register/register.php [L]
+RewriteRule ^olvidar-contrasena$ frontend/pages/user-options/forgot-password/forgot-password.php [L]
+RewriteRule ^activos$ frontend/pages/principal/assets/assets.php [L]
+RewriteRule ^administrador$ frontend/pages/principal/admin/admin.php [L]
+RewriteRule ^mural$ frontend/pages/principal/mural/mural.php [L]
+RewriteRule ^configuracion$ frontend/pages/principal/settings/settings.php [L]
+RewriteRule ^plantilla$ frontend/pages/principal/spreadsheet/spreadsheet.php [L]
+RewriteRule ^nueva-contrasena$ frontend/pages/user-options/forgot-password/new-password/new-password.php [L]
+# ---------------------------------------------------------------
+# URLs AMIGABLES BACKEND (API)
+# ---------------------------------------------------------------
+RewriteRule ^api/sesion$ backend/user/session.php [L]
+RewriteRule ^api/cambiar-contrasena$ backend/user/change-password/changePassword.php [L]
+RewriteRule ^api/registrar-usuario$ backend/user/register/registerUser.php [L]
+RewriteRule ^api/activo$ backend/asset/assetActions.php [L]
+RewriteRule ^api/activos-varios$ backend/asset/uploadSeveral/uploadSeveralActions.php [L]
+RewriteRule ^api/sede$ backend/sede/sedeActions.php [L]
+RewriteRule ^api/empleados$ backend/employee/employeeActions.php [L]
+RewriteRule ^api/gerencias$ backend/gerencia/gerenciaActions.php [L]
+RewriteRule ^api/administrador$ backend/admin/adminActions.php [L]
+
+# ---------------------------------------------------------------
+# PERMITIR ARCHIVOS ESTÁTICOS
+# ---------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|php)$ [NC]
+RewriteRule . index.php [L]
