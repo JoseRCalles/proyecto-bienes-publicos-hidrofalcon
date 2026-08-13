@@ -1,7 +1,3 @@
-name: sistema-bienes-publicos-hidrofalcon
-description: Manual técnico y de usuario para el Sistema de Gestión de Bienes Públicos de Hidrofalcón.
----
-
 # Sistema de Bienes Públicos de Hidrofalcón
 
 ## Introducción
